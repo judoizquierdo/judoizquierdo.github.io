@@ -88,7 +88,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">¿Por qué nosotros?</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h3 class="section-subheading text-muted">Tu Club de Judo en el centro de Zaragoza</h3>
                 </div>
             </div>
             <div class="row text-center">
@@ -191,7 +191,7 @@
 
                 <div class="col-md-6 col-sm-6 text-center">
                     <h4>Judo Infantil</h4>
-                    <h5>Colegio --</h5>
+                    <h5>Colegio Nuestra Señora del Carmen (Carmelitas)</h5>
                 </div>
             </div>
         </div>
@@ -219,27 +219,34 @@
             <div class="row">
                 <div class="col-lg-12">
                     <form name="sentMessage" id="contactForm" method="POST" action="http://formspree.io/gimnasio@karatekan.es" novalidate>
+                        <div class='large-12 columns'>
+                            <p id='thanks' style='display: none;'>
+                                Gracias por contactar con nosotros.
+                            </p>
+                        </div>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Tu nombre *" id="name" required data-validation-required-message="Por favor introduzca su nombre.">
+                                    <input type="text" class="form-control" placeholder="Tu nombre *" id="name" name='name' required data-validation-required-message="Por favor introduzca su nombre.">
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="Tu Email *" id="email" required data-validation-required-message="Por favor introduzca su Email.">
+                                    <input type="email" class="form-control" placeholder="Tu Email *" id="email" name='_replyto' required data-validation-required-message="Por favor introduzca su Email.">
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="form-group">
-                                    <input type="tel" class="form-control" placeholder="Tu teléfono *" id="phone" required data-validation-required-message="Por favor introduzca su teléfono.">
+                                    <input type="tel" class="form-control" placeholder="Tu teléfono *" id="phone" name='_subject' required data-validation-required-message="Por favor introduzca su teléfono.">
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <textarea class="form-control" placeholder="Tu mensaje *" id="message" required data-validation-required-message="Por favor introduzca un mensaje."></textarea>
+                                    <textarea class="form-control" placeholder="Tu mensaje *" id="message" name='message' required data-validation-required-message="Por favor introduzca un mensaje."></textarea>
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
+                            <input type="hidden" name="_next" value="/" />
+                            <input type="text" name="_gotcha" style="display:none" />
                             <div class="clearfix"></div>
                             <div class="col-lg-12 text-center">
                                 <div id="success"></div>
