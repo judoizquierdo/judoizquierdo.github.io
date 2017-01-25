@@ -8,18 +8,13 @@ $(function() {
             // additional error messages or events
         },
         submitSuccess: function($form, event) {
-            event.preventDefault(); // prevent default submit behaviour
-            // get values from FORM
+            event.preventDefault();
+
             var name = $("input#name").val();
             var email = $("input#email").val();
             var phone = $("input#phone").val();
             var message = $("textarea#message").val();
             var gotcha = $("input#gotcha").val();
-            var firstName = name; // For Success/Failure Message
-            // Check for white space in name for Success/Fail message
-            if (firstName.indexOf(' ') >= 0) {
-                firstName = name.split(' ')[0];
-            }
             $.ajax({
                 url: "https://formspree.io/judoizquierdo@gmail.com",
                 method: "POST",
@@ -30,9 +25,9 @@ $(function() {
                     message: message,
                     _gotcha: gotcha,
                 },
+                cache: false,
                 datatype: "json",
-                success: function() {
-                    // Success message
+                complete: function() {
                     $('#success').html("<div class='alert alert-success'>");
                     $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                         .append("</button>");
@@ -40,18 +35,6 @@ $(function() {
                         .append("<strong>Su mensaje ha sido enviado. </strong>");
                     $('#success > .alert-success')
                         .append('</div>');
-
-                    //clear all fields
-                    $('#contactForm').trigger("reset");
-                },
-                error: function() {
-                    // Fail message
-                    $('#success').html("<div class='alert alert-danger'>");
-                    $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-                        .append("</button>");
-                    $('#success > .alert-danger').append("<strong>Lo sentimos " + firstName + ", parece que el servidor de correo no funciona. <br />Contacte con nosotros por teléfono.");
-                    $('#success > .alert-danger').append('</div>');
-                    //clear all fields
                     $('#contactForm').trigger("reset");
                 },
             });
