@@ -634,6 +634,10 @@ button { font-family: inherit; }
 @media (min-width: 768px) {
   .professor { grid-template-columns: 280px 1fr; }
 }
+.professor__image {
+  display: flex;
+  justify-content: center;
+}
 .professor__image img {
   width: 100%;
   max-width: 280px;
@@ -892,6 +896,9 @@ button { font-family: inherit; }
   color: var(--gray-500);
   white-space: nowrap;
 }
+@media (max-width: 639px) {
+  .pyramid__names li { white-space: normal; }
+}
 
 @media (max-width: 639px) {
   .pyramid__level { width: 100%; }
@@ -974,6 +981,7 @@ button { font-family: inherit; }
 .contact-social__link {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   color: var(--gray-500);
   font-size: 0.875rem;
@@ -987,6 +995,9 @@ button { font-family: inherit; }
   font-family: inherit;
 }
 .contact-social__link:hover { color: var(--black); border-color: var(--gray-500); }
+@media (max-width: 639px) {
+  .contact-social { flex-direction: column; align-items: stretch; }
+}
 
 /* =====================================================
    FOOTER
