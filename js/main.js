@@ -47,7 +47,7 @@
   });
 
   /* --- MASONRY GALLERY --- */
-  const lightbox = document.getElementById('lightbox'); // kept for CV modal Escape handler
+  const lightbox = document.getElementById('lightbox');
   function closeLightbox() { if (lightbox) { lightbox.hidden = true; document.body.style.overflow = ''; } }
 
   const masonryImgs = Array.from(document.querySelectorAll('.masonry__img'));
@@ -94,33 +94,6 @@
     }, 4500);
   }
 
-  /* --- CV MODAL --- */
-  const cvBtn     = document.getElementById('cvBtn');
-  const cvModal   = document.getElementById('cvModal');
-  const cvClose   = document.getElementById('cvClose');
-  const cvOverlay = document.getElementById('cvOverlay');
-
-  function openCv() {
-    cvModal.hidden = false;
-    document.body.style.overflow = 'hidden';
-    cvClose.focus();
-  }
-  function closeCv() {
-    cvModal.hidden = true;
-    document.body.style.overflow = '';
-    cvBtn.focus();
-  }
-
-  if (cvBtn) {
-    cvBtn.addEventListener('click', openCv);
-    cvClose.addEventListener('click', closeCv);
-    cvOverlay.addEventListener('click', closeCv);
-    document.addEventListener('keydown', e => {
-      if (e.key !== 'Escape') return;
-      if (lightbox && !lightbox.hidden) closeLightbox();
-      else if (!cvModal.hidden) closeCv();
-    });
-  }
 
   /* --- SHARE --- */
   const shareBtn = document.getElementById('shareBtn');
