@@ -396,65 +396,6 @@ button { font-family: inherit; }
 }
 .btn--instagram:hover { color: var(--black); border-color: var(--gray-500); opacity: 1; }
 
-/* Lightbox */
-.lightbox {
-  position: fixed;
-  inset: 0;
-  z-index: 300;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.lightbox[hidden] { display: none; }
-.lightbox__overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,.88);
-  backdrop-filter: blur(4px);
-}
-.lightbox__figure {
-  position: relative;
-  z-index: 1;
-  max-width: min(90vw, 1000px);
-  max-height: 88vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.75rem;
-}
-.lightbox__figure img {
-  max-width: 100%;
-  max-height: 82vh;
-  object-fit: contain;
-  border-radius: 4px;
-  display: block;
-}
-.lightbox__figure figcaption {
-  color: rgba(255,255,255,.8);
-  font-size: 0.875rem;
-  text-align: center;
-}
-.lightbox__close {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  z-index: 2;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: rgba(255,255,255,.15);
-  border: none;
-  color: #fff;
-  font-size: 1.5rem;
-  line-height: 1;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background var(--t);
-}
-.lightbox__close:hover { background: rgba(255,255,255,.28); }
-
 /* =====================================================
    FAQ
    ===================================================== */

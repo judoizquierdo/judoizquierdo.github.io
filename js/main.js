@@ -47,9 +47,6 @@
   });
 
   /* --- MASONRY GALLERY --- */
-  const lightbox = document.getElementById('lightbox');
-  function closeLightbox() { if (lightbox) { lightbox.hidden = true; document.body.style.overflow = ''; } }
-
   const masonryImgs = Array.from(document.querySelectorAll('.masonry__img'));
   if (masonryImgs.length > 1) {
     const ALL = [
